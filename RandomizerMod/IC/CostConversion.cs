@@ -81,22 +81,22 @@ namespace RandomizerMod.IC
                         return Cost.NewGeoCost(sc.threshold);
 
                     case "SIMPLE": // not actually used, since godtuner no longer requires a separate cost
-                        return new ConsumablePDIntCost(1, nameof(PlayerData.simpleKeys), "Use 1 Simple Key");
+                        return new ConsumablePDIntCost(1, nameof(PlayerData.simpleKeys), Localize("Use 1 Simple Key"));
                     
                     case "Spore_Shroom": // not actually used, since lore tablet locations no longer become shiny
-                        return new PDBoolCost(nameof(PlayerData.equippedCharm_17), "Requires Spore Shroom Equipped");
+                        return new PDBoolCost(nameof(PlayerData.equippedCharm_17), Localize("Requires Spore Shroom Equipped"));
 
                     case "CHARMS":
-                        return new PDIntCost(sc.threshold, nameof(PlayerData.charmsOwned), $"Once you own {sc.threshold} charm{(sc.threshold != 1 ? "s" : "")}, I'll gladly sell it to you.");
+                        return new PDIntCost(sc.threshold, nameof(PlayerData.charmsOwned), $"{Localize("Once you own")} {sc.threshold} charm{(sc.threshold != 1 ? "s" : "")}, {Localize("I'll gladly sell it to you.")}");
 
                     case "DREAMNAIL":
-                        return new PDBoolCost(nameof(PlayerData.hasDreamNail), "Requires Dream Nail");
+                        return new PDBoolCost(nameof(PlayerData.hasDreamNail), Localize("Requires Dream Nail"));
 
                     case "SCREAM":
-                        return new PDIntCost(sc.threshold, nameof(PlayerData.screamLevel), "Requires Howling Wraiths");
+                        return new PDIntCost(sc.threshold, nameof(PlayerData.screamLevel), Localize("Requires Howling Wraiths"));
                 }
             }
-
+            
             if (cost is RC.LogicGeoCost gc)
             {
                 return Cost.NewGeoCost(gc.GeoAmount);

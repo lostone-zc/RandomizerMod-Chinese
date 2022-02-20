@@ -358,7 +358,7 @@ namespace RandomizerMod.Settings.Presets
 
             if (sgs.RandomizeOnStart)
             {
-                sb.Append("Randomized: ");
+                sb.Append(Localize("Randomized: "));
                 sb.Append(string.Join(", ", groups.Where(g => g.Key < 3).SelectMany(g => g.Select(p => Localize(p.fi.GetMenuName())))));
                 sb.Append(". ");
                 foreach (var g in groups.Where(g => g.Key >= 3))
