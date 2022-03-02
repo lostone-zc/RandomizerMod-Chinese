@@ -86,7 +86,7 @@ namespace RandomizerMod
             SHA1 = GetSHA1();
             System.Version v = Assembly.GetName().Version;
             int buildHash = Math.Abs(SHA1.GetStableHashCode()) % 997;
-            Version = $"{v.Major}.{v.Minor}.{v.Build} Pre-release+CaLST+{buildHash.ToString().PadLeft(3, '0')}";
+            Version = $"{v.Major}.{v.Minor}.{v.Build}+CaLST+{buildHash.ToString().PadLeft(3, '0')}";
         }
 
         public bool ToggleButtonInsideMenu => false;
